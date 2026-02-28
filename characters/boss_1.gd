@@ -23,23 +23,24 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
+	# Horizontal difference
+	var dx = player.global_position.x - global_position.x
+	var horizontal_distance = abs(dx)
+
 	# Face player horizontally
-	sprite.flip_h = player.global_position.x < global_position.x
+	if horizontal_distance > 1:
+		sprite.flip_h = dx < 0
 
-	# Horizontal distance only
-	var horizontal_distance = abs(player.global_position.x - global_position.x)
-
-	# Follow player if within follow_range and not attacking
-	if horizontal_distance < follow_range and horizontal_distance > attack_range and not is_attacking:
-		var dir = sign(player.global_position.x - global_position.x)
-		velocity.x = dir * speed
+	# Follow if within follow_range and not attacking
+	if horizontal_distance <= follow_range and horizontal_distance > attack_range and not is_attacking:
+		velocity.x = sign(dx) * speed
 		sprite.play("move")
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 
-	# Attack if close horizontally (no strict vertical check)
-	if horizontal_distance <= attack_range and can_attack and not is_attacking:
-		attack_async()  # async attack so physics still runs
+	# Attack if within attack_range AND follow_range
+	if horizontal_distance <= attack_range and horizontal_distance <= follow_range and can_attack and not is_attacking:
+		attack_async()
 
 	move_and_slide()
 
