@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var speed: int = 120
 @export var damage: int = 25
 
-const JUMP_VELOCITY = -300.0
+const JUMP_VELOCITY = -200.0
 
 var is_attacking = false
 
