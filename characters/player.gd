@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
 @export var health: int = 100
-@export var speed: int = 60
+@export var speed: int = 80
 @export var damage: int = 50
 
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -250.0
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

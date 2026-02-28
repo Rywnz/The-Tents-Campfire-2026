@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://csmyncy8lyx3c"]
+[gd_scene format=4 uid="uid://gfh6lnutnocp"]
 
 [ext_resource type="Texture2D" uid="uid://cpugtleh7tqt" path="res://Assets/ReverieGrassland/tileset.png" id="1_3hls8"]
 [ext_resource type="PackedScene" uid="uid://cqbbcp62h86lx" path="res://characters/player.tscn" id="2_hbghi"]
@@ -110,6 +110,7 @@ tile_set = SubResource("TileSet_hn12h")
 position = Vector2(18, -12)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1467220797]
+zoom = Vector2(3, 3)
 
 [node name="1" type="Sprite2D" parent="." unique_id=794983247]
 z_index = -1
