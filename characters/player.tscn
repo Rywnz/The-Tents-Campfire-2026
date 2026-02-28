@@ -1,7 +1,51 @@
 [gd_scene format=3 uid="uid://cqbbcp62h86lx"]
 
-[ext_resource type="Script" uid="uid://c4l67wlaar0wj" path="res://characters/player.gd" id="1_dnjla"]
 [ext_resource type="Texture2D" uid="uid://c5dm2ea65xdu5" path="res://Assets/generic_char_v0.2/png/red/char_red_1.png" id="2_3eadt"]
+
+[sub_resource type="GDScript" id="GDScript_3eadt"]
+script/source = "extends CharacterBody2D
+
+@export var health: int = 100
+@export var speed: int = 80
+@export var damage: int = 67
+
+const JUMP_VELOCITY = -250.0
+
+@onready var sprite = $AnimatedSprite2D
+
+func _physics_process(delta: float) -> void:
+	# Add gravity
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
+	# Handle jump
+	if Input.is_action_just_pressed(\"jump\") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+
+ 	# Get movement input
+	var direction: int = Input.get_axis(\"left\", \"right\")
+
+	if direction:
+		velocity.x = direction * speed
+		
+		# Flip sprite
+		if direction < 0:
+			sprite.flip_h = true
+		else:
+			sprite.flip_h = false
+	else:
+		velocity.x = move_toward(velocity.x, 0, speed)
+
+	move_and_slide()
+
+	# Animation logic
+	if not is_on_floor():
+		sprite.play(\"jump\")
+	elif direction:
+		sprite.play(\"run\")
+	else:
+		sprite.play(\"idle\")
+"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mjkfq"]
 atlas = ExtResource("2_3eadt")
@@ -418,7 +462,7 @@ animations = [{
 size = Vector2(6, 15.03125)
 
 [node name="Player" type="CharacterBody2D" unique_id=1484898325]
-script = ExtResource("1_dnjla")
+script = SubResource("GDScript_3eadt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2047515678]
 position = Vector2(-10, 13)
@@ -426,6 +470,8 @@ scale = Vector2(0.5357143, 0.53571427)
 sprite_frames = SubResource("SpriteFrames_n8jd0")
 animation = &"attack"
 autoplay = "idle"
+frame = 7
+frame_progress = 1.0
 
 [node name="player_collision" type="CollisionShape2D" parent="." unique_id=491174158]
 position = Vector2(-10, 20.515625)
