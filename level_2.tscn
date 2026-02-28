@@ -31,12 +31,13 @@ layer_0/tile_data = PackedInt32Array(-327643, 458752, 4, -262107, 458752, 4, -19
 [node name="Player" parent="." unique_id=1484898325 groups=["Player"] instance=ExtResource("2_nmjpi")]
 z_index = 1
 position = Vector2(63, -28)
+damage = 50
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1141068168]
 zoom = Vector2(8, 8)
 
 [node name="Bcyaen" type="Sprite2D" parent="." unique_id=1772797210]
-position = Vector2(687.50006, -308)
+position = Vector2(697, -313)
 scale = Vector2(0.61718744, 0.72240007)
 texture = ExtResource("3_xdadj")
 
