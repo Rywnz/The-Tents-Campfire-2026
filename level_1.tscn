@@ -223,7 +223,7 @@ layer_0/tile_data = PackedInt32Array(-131071, 524288, 1, -65535, 524288, 2, -131
 [node name="Player" parent="." unique_id=1484898325 groups=["Player"] instance=ExtResource("2_hbghi")]
 position = Vector2(18, -12)
 script = ExtResource("3_rka8t")
-speed = 60
+speed = 70
 damage = 17
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1467220797]
