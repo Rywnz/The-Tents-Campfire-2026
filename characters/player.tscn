@@ -510,7 +510,7 @@ size = Vector2(4, 17)
 
 [node name="Player" type="CharacterBody2D" unique_id=1484898325 groups=["player"]]
 script = SubResource("GDScript_3eadt")
-speed = 60
+speed = 50
 damage = 12
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2047515678]

@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
-@export var health: int = 300
-@export var speed: int = 60
-@export var attack_range: float = 50.0
-@export var follow_range: float = 200.0
+@export var health: int
+@export var speed: int
+@export var attack_range: float
+@export var follow_range: float
 
 var is_attacking = false
 var can_attack = true
