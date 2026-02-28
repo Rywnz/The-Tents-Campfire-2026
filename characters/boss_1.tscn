@@ -230,10 +230,10 @@ radius = 9.0
 height = 28.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5agwi"]
-size = Vector2(34.5, 37.5)
+size = Vector2(8.25, 27)
 
 [node name="boss1" type="CharacterBody2D" unique_id=536172538]
-position = Vector2(13, -10)
+position = Vector2(-24, -5)
 script = ExtResource("1_4c0i4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1344916694]
@@ -242,7 +242,7 @@ scale = Vector2(0.2890625, 0.2890625)
 sprite_frames = SubResource("SpriteFrames_bmiag")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.53917015
+frame_progress = 0.039755814
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=940230881]
 position = Vector2(-44, 51)
@@ -251,7 +251,7 @@ shape = SubResource("CapsuleShape2D_mvcqf")
 [node name="AttackArea" type="Area2D" parent="." unique_id=435907767 groups=["enemy"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=464240654]
-position = Vector2(-44, 45)
+position = Vector2(-35, 50.5)
 shape = SubResource("RectangleShape2D_5agwi")
 
 [connection signal="body_entered" from="AttackArea" to="." method="_on_area_2d_body_entered"]
