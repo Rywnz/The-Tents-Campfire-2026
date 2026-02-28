@@ -54,4 +54,4 @@ jump={
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
-environment/defaults/default_clear_color=Color(0.15883046, 0.54770654, 0.72307694, 1)
+environment/defaults/default_clear_color=Color(0.36492383, 0.74725693, 0.9025159, 1)
