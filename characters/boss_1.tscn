@@ -211,7 +211,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yvtft")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 6.0
 }, {
@@ -334,24 +334,20 @@ radius = 9.0
 height = 28.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5agwi"]
-size = Vector2(28, 27)
+size = Vector2(30.5, 27)
 
 [node name="boss1" type="CharacterBody2D" unique_id=536172538]
 position = Vector2(-24, -5)
 script = ExtResource("1_4c0i4")
 health = 300
 speed = 45
-attack_range = 50.0
-follow_range = 200.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1344916694]
 position = Vector2(-45.5, 45.5)
 scale = Vector2(0.2890625, 0.2890625)
 sprite_frames = SubResource("SpriteFrames_bmiag")
-animation = &"hurt"
+animation = &"attack_heavy"
 autoplay = "idle"
-frame = 3
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=940230881]
 position = Vector2(-44, 51)
@@ -360,7 +356,7 @@ shape = SubResource("CapsuleShape2D_mvcqf")
 [node name="AttackArea" type="Area2D" parent="." unique_id=435907767 groups=["enemy"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=464240654]
-position = Vector2(-44, 51)
+position = Vector2(-36.25, 51)
 shape = SubResource("RectangleShape2D_5agwi")
 
 [connection signal="body_entered" from="AttackArea" to="." method="_on_area_2d_body_entered"]
