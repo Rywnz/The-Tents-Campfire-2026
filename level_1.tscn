@@ -1,8 +1,9 @@
-[gd_scene format=4 uid="uid://gfh6lnutnocp"]
+[gd_scene format=4 uid="uid://cy2r4461he8wg"]
 
 [ext_resource type="Texture2D" uid="uid://cpugtleh7tqt" path="res://Assets/ReverieGrassland/tileset.png" id="1_3hls8"]
 [ext_resource type="PackedScene" uid="uid://cqbbcp62h86lx" path="res://characters/player.tscn" id="2_hbghi"]
 [ext_resource type="Texture2D" uid="uid://fy8mep11tn0y" path="res://Assets/background 1/4.png" id="4_5hph3"]
+[ext_resource type="Texture2D" uid="uid://b2q3akt5mo2v1" path="res://Assets/unnamed.png" id="4_ihfcg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hbghi"]
 texture = ExtResource("1_3hls8")
@@ -119,7 +120,12 @@ texture = ExtResource("4_5hph3")
 
 [node name="4" type="Sprite2D" parent="4" unique_id=318334474]
 z_index = -1
-position = Vector2(547.31036, 51.30799)
-rotation = -3.1415927
-scale = Vector2(0.90625006, 0.52087945)
+position = Vector2(547.31036, -3.0404396)
+scale = Vector2(0.90624994, 0.95958894)
 texture = ExtResource("4_5hph3")
+
+[node name="Unnamed" type="Sprite2D" parent="." unique_id=844375594]
+z_index = -6
+position = Vector2(565, -66)
+scale = Vector2(3.5875003, 2.7291667)
+texture = ExtResource("4_ihfcg")
