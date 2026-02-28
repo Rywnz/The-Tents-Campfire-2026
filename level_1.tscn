@@ -1,9 +1,9 @@
-[gd_scene format=4 uid="uid://gfh6lnutnocp"]
+[gd_scene format=4 uid="uid://u6ro0nytgu5n"]
 
 [ext_resource type="Texture2D" uid="uid://cpugtleh7tqt" path="res://Assets/ReverieGrassland/tileset.png" id="1_3hls8"]
 [ext_resource type="PackedScene" uid="uid://cqbbcp62h86lx" path="res://characters/player.tscn" id="2_hbghi"]
 [ext_resource type="Texture2D" uid="uid://fy8mep11tn0y" path="res://Assets/background 1/4.png" id="4_5hph3"]
-[ext_resource type="Texture2D" uid="uid://7dagrl5cw372" path="res://Assets/Untitled design (4).png" id="4_ihfcg"]
+[ext_resource type="Script" uid="uid://5nym0aimtiwg" path="res://worldborderkill.gd" id="4_ihfcg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hbghi"]
 texture = ExtResource("1_3hls8")
@@ -99,6 +99,10 @@ texture = ExtResource("1_3hls8")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_hbghi")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rka8t"]
+normal = Vector2(-0.033314828, -0.9994449)
+distance = 0.05
+
 [node name="Level_1" type="Node2D" unique_id=1419932942]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1489921983]
@@ -118,8 +122,10 @@ rotation = -3.1415927
 scale = Vector2(2.6307492, 0.9445025)
 texture = ExtResource("4_5hph3")
 
-[node name="UntitledDesign(4)" type="Sprite2D" parent="." unique_id=1326851729]
-z_index = -2
-position = Vector2(560.00006, -60.500004)
-scale = Vector2(1.29875, 0.6522223)
-texture = ExtResource("4_ihfcg")
+[node name="Area2D" type="Area2D" parent="." unique_id=1336460959]
+position = Vector2(76, 231)
+script = ExtResource("4_ihfcg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1196449101]
+position = Vector2(-2, -2)
+shape = SubResource("WorldBoundaryShape2D_rka8t")
