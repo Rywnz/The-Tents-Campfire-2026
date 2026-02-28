@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal health_changed(current_health)
+
 @export var health: int
 @export var speed: int
 @export var damage: int
@@ -86,7 +88,7 @@ func take_damage(amount):
 
 	health -= amount
 	print("PLAYER HEALTH:", health)
-
+	health_changed.emit(health)
 	if health > 0:
 		is_hurt = true
 		sprite.play("damage_taken")

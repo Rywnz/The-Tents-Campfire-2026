@@ -7,7 +7,9 @@
 [ext_resource type="Script" uid="uid://5nym0aimtiwg" path="res://worldborderkill.gd" id="4_ihfcg"]
 [ext_resource type="PackedScene" uid="uid://c17bplgal5y2v" path="res://characters/boss_1.tscn" id="6_5hph3"]
 [ext_resource type="Texture2D" uid="uid://bpy816mfwuv1j" path="res://Assets/background 1/Untitled design (4).png" id="7_j7kpp"]
+[ext_resource type="PackedScene" uid="uid://d10b3tbtaj55d" path="res://HealthBar.tscn" id="8_5rr72"]
 [ext_resource type="Texture2D" uid="uid://fxq0cj0dnkit" path="res://Assets/background 1/3.png" id="8_bjebc"]
+[ext_resource type="Script" uid="uid://chjus6ffr4iwy" path="res://health_bar.gd" id="9_gyffv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hbghi"]
 texture = ExtResource("1_3hls8")
@@ -238,7 +240,7 @@ scale = Vector2(2.7042732, 1.0229285)
 texture = ExtResource("4_5hph3")
 
 [node name="boss1" parent="." unique_id=536172538 instance=ExtResource("6_5hph3")]
-position = Vector2(114, -49)
+position = Vector2(1110, -48)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=703682950]
 script = ExtResource("4_ihfcg")
@@ -249,12 +251,15 @@ shape = SubResource("WorldBoundaryShape2D_5hph3")
 
 [node name="Sky" type="Sprite2D" parent="." unique_id=570540242]
 z_index = -3
-position = Vector2(550.5, -84.499985)
+position = Vector2(546, -116)
 scale = Vector2(1.3008333, 0.6966667)
 texture = ExtResource("7_j7kpp")
 
 [node name="3" type="Sprite2D" parent="." unique_id=2124432929]
 z_index = -1
-position = Vector2(550, 74)
+position = Vector2(543, 57.999985)
 scale = Vector2(2.6961806, 2.0146606)
 texture = ExtResource("8_bjebc")
+
+[node name="HealthBar" parent="." unique_id=1316760223 instance=ExtResource("8_5rr72")]
+script = ExtResource("9_gyffv")

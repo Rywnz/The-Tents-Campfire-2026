@@ -1,3 +1,22 @@
-[gd_scene format=3 uid="uid://cw37lanqi2ld5"]
+[gd_scene format=4 uid="uid://kqvtpws80ucb"]
+
+[ext_resource type="TileSet" uid="uid://5d6rihaj5l6a" path="res://Assets/level3.tres" id="1_lyoih"]
+[ext_resource type="PackedScene" uid="uid://cqbbcp62h86lx" path="res://characters/player.tscn" id="2_o2ccw"]
 
 [node name="Level3" type="Node2D" unique_id=265324118]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=916493543]
+tile_map_data = PackedByteArray("AAD//wIAAAABAAAAAAAAAAIAAAACAAAAAAABAAIAAAADAAAAAAACAAIAAAAEAAAAAAADAAIAAAABAAAAAAAEAAIAAAACAAAAAAAFAAIAAAADAAAAAAAGAAIAAAABAAAAAAAHAAIAAAACAAAAAAAIAAIAAAADAAAAAAAJAAIAAAAEAAAAAAAKAAIAAAABAAAAAAALAAIAAAACAAAAAAAMAAIAAAADAAAAAAANAAIAAAAEAAAAAAA=")
+tile_set = ExtResource("1_lyoih")
+
+[node name="TileMap" type="TileMap" parent="TileMapLayer" unique_id=917752933]
+z_index = 1
+tile_set = ExtResource("1_lyoih")
+format = 2
+layer_0/tile_data = PackedInt32Array(65540, 524288, 7, 5, 589824, 6, 65541, 589824, 7, -196605, 524288, 11, -196604, 589824, 11, -131068, 589824, 12, -131069, 524288, 12, -65533, 524288, 13, -65532, 589824, 13, 4, 524288, 6, -262141, 524288, 10, -262140, 589824, 10)
+
+[node name="Player" parent="." unique_id=1484898325 instance=ExtResource("2_o2ccw")]
+position = Vector2(19, 4)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=120279026]
+zoom = Vector2(8, 8)

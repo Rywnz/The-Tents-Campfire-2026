@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://d10b3tbtaj55d"]
+
+[node name="HealthBar" type="Node2D" unique_id=1316760223]
+z_index = 6
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1488560516]
+
+[node name="HealthBar" type="ProgressBar" parent="CanvasLayer" unique_id=1405194767]
+offset_right = 88.0
+offset_bottom = 27.0
+scale = Vector2(2, 2)
+value = 100.0
