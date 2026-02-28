@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://d7jejiyn33bq" path="res://characters/player.gd" id="3_rka8t"]
 [ext_resource type="Texture2D" uid="uid://fy8mep11tn0y" path="res://Assets/background 1/4.png" id="4_5hph3"]
 [ext_resource type="Texture2D" uid="uid://7dagrl5cw372" path="res://Assets/Untitled design (4).png" id="4_ihfcg"]
+[ext_resource type="PackedScene" uid="uid://c17bplgal5y2v" path="res://characters/boss_1.tscn" id="6_5hph3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hbghi"]
 texture = ExtResource("1_3hls8")
@@ -126,3 +127,6 @@ z_index = -2
 position = Vector2(560.00006, -60.500004)
 scale = Vector2(1.29875, 0.6522223)
 texture = ExtResource("4_ihfcg")
+
+[node name="boss1" parent="." unique_id=536172538 instance=ExtResource("6_5hph3")]
+position = Vector2(114, -49)
