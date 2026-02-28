@@ -230,7 +230,7 @@ zoom = Vector2(8, 8)
 
 [node name="4" type="Sprite2D" parent="." unique_id=104165253]
 z_index = -1
-position = Vector2(655, -243.00002)
+position = Vector2(564, -203.00002)
 rotation = -3.1415927
 scale = Vector2(2.6307492, 0.9445025)
 texture = ExtResource("4_5hph3")
