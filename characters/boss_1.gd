@@ -23,24 +23,23 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# Horizontal difference
-	var dx = player.global_position.x - global_position.x
-	var horizontal_distance = abs(dx)
-
 	# Face player horizontally
-	if horizontal_distance > 1:
-		sprite.flip_h = dx < 0
+	sprite.flip_h = player.global_position.x < global_position.x
 
-	# Follow if within follow_range and not attacking
-	if horizontal_distance <= follow_range and horizontal_distance > attack_range and not is_attacking:
-		velocity.x = sign(dx) * speed
+	# Horizontal distance only
+	var horizontal_distance = abs(player.global_position.x - global_position.x)
+
+	# Follow player if within follow_range and not attacking
+	if horizontal_distance < follow_range and horizontal_distance > attack_range and not is_attacking:
+		var dir = sign(player.global_position.x - global_position.x)
+		velocity.x = dir * speed
 		sprite.play("move")
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 
-	# Attack if within attack_range AND follow_range
-	if horizontal_distance <= attack_range and horizontal_distance <= follow_range and can_attack and not is_attacking:
-		attack_async()
+	# Attack if close horizontally (no strict vertical check)
+	if horizontal_distance <= attack_range and can_attack and not is_attacking:
+		attack_async()  # async attack so physics still runs
 
 	move_and_slide()
 
@@ -56,18 +55,18 @@ func attack_async() -> void:
 	attack_counter += 1
 
 	var atk_anim = "attack"
-	var atk_damage = 10
+	var atk_damage = 10       # normal attack damage
 	var atk_range = attack_range
-	var atk_delay = 0.6
-	var atk_cooldown = 1.2
+	var atk_delay = 0.6       # normal attack delay
+	var atk_cooldown = 1.2    # normal attack cooldown
 
 	# Every 5th attack is heavy
 	if attack_counter % 5 == 0:
 		atk_anim = "attack_heavy"
 		atk_damage = 15
 		atk_range = attack_range + 20
-		atk_delay = 1.0
-		atk_cooldown = 1.8
+		atk_delay = 1.0          # heavy attack delay (animation fully plays)
+		atk_cooldown = 1.8       # heavy attack cooldown
 
 	sprite.play(atk_anim)
 
