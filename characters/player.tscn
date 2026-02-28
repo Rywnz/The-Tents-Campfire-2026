@@ -56,15 +56,17 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q605b"]
 size = Vector2(8, 20.0625)
 
-[node name="Player2" type="CharacterBody2D" unique_id=1484898325]
-visible = false
+[node name="Player" type="CharacterBody2D" unique_id=1484898325]
 script = ExtResource("1_dnjla")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2047515678]
 sprite_frames = SubResource("SpriteFrames_n8jd0")
 animation = &"new_animation"
-frame_progress = 0.3523379
+frame = 4
+frame_progress = 0.11576193
 
 [node name="player_collision" type="CollisionShape2D" parent="." unique_id=491174158]
 position = Vector2(-1, 18.03125)
 shape = SubResource("RectangleShape2D_q605b")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=945917029]
