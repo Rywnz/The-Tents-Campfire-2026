@@ -120,12 +120,12 @@ texture = ExtResource("3_rka8t")
 
 [node name="4" type="Sprite2D" parent="." unique_id=104165253]
 z_index = -1
-position = Vector2(246.00003, -239.99998)
+position = Vector2(250, -281)
 rotation = -3.1415927
 scale = Vector2(0.90625006, 0.52623457)
 texture = ExtResource("4_5hph3")
 
 [node name="3" type="Sprite2D" parent="." unique_id=1374752627]
-position = Vector2(753, -280.00003)
+position = Vector2(764.00006, -256)
 scale = Vector2(1.1111112, 0.61419755)
 texture = ExtResource("5_j7kpp")
