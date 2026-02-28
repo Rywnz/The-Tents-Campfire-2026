@@ -2,12 +2,12 @@ extends CharacterBody2D
 
 @export var health: int = 300
 @export var speed: int = 60
-@export var damage: int = 20
 @export var attack_range: float = 50.0
 @export var follow_range: float = 200.0
 
 var is_attacking = false
 var can_attack = true
+var attack_counter = 0  # counts attacks to decide heavy attack
 
 @onready var sprite = $AnimatedSprite2D
 @onready var player = null
@@ -16,53 +16,74 @@ func _ready():
 	player = get_tree().get_first_node_in_group("player")
 
 func _physics_process(delta):
-	if not player:
+	if not player or not is_instance_valid(player):
 		return
 
 	# Gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	var distance = global_position.distance_to(player.global_position)
+	# Horizontal difference
+	var dx = player.global_position.x - global_position.x
+	var horizontal_distance = abs(dx)
 
-	# Face player ALWAYS
-	sprite.flip_h = player.global_position.x < global_position.x
+	# Face player horizontally
+	if horizontal_distance > 1:
+		sprite.flip_h = dx < 0
 
-	# Follow player if within follow_range
-	if distance < follow_range and distance > attack_range and not is_attacking:
-		var dir = sign(player.global_position.x - global_position.x)
-		velocity.x = dir * speed
+	# Follow if within follow_range and not attacking
+	if horizontal_distance <= follow_range and horizontal_distance > attack_range and not is_attacking:
+		velocity.x = sign(dx) * speed
 		sprite.play("move")
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 
-	# Attack if close
-	if distance <= attack_range and can_attack and not is_attacking:
-		attack()
+	# Attack if within attack_range AND follow_range
+	if horizontal_distance <= attack_range and horizontal_distance <= follow_range and can_attack and not is_attacking:
+		attack_async()
 
 	move_and_slide()
 
 	if velocity.x == 0 and not is_attacking:
 		sprite.play("idle")
 
-func attack():
+func attack_async() -> void:
+	if is_attacking or not can_attack:
+		return
+
 	is_attacking = true
 	can_attack = false
+	attack_counter += 1
 
-	sprite.play("attack")
+	var atk_anim = "attack"
+	var atk_damage = 10
+	var atk_range = attack_range
+	var atk_delay = 0.6
+	var atk_cooldown = 1.2
 
-	# Wait a little so animation plays
-	await get_tree().create_timer(0.4).timeout
+	# Every 5th attack is heavy
+	if attack_counter % 5 == 0:
+		atk_anim = "attack_heavy"
+		atk_damage = 15
+		atk_range = attack_range + 20
+		atk_delay = 1.0
+		atk_cooldown = 1.8
 
-	# DIRECT DAMAGE: ignore collisions, just check distance
-	if player and global_position.distance_to(player.global_position) <= attack_range:
-		player.take_damage(damage)
+	sprite.play(atk_anim)
+
+	# Delay before applying damage
+	await get_tree().create_timer(atk_delay).timeout
+
+	# Apply damage if player still in horizontal range
+	var dx = abs(player.global_position.x - global_position.x)
+	if dx <= atk_range:
+		player.take_damage(atk_damage)
 		print("Boss hit player! Player HP:", player.health)
 
 	is_attacking = false
 
-	# Cooldown
-	await get_tree().create_timer(1.2).timeout
+	# Cooldown before next attack
+	await get_tree().create_timer(atk_cooldown).timeout
 	can_attack = true
 
 func take_damage(amount):
