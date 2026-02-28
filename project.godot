@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="insidethetent"
-run/main_scene="uid://gfh6lnutnocp"
+run/main_scene="uid://dvl7h7j7rgt8m"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -58,3 +58,4 @@ jump={
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(0.36492383, 0.74725693, 0.9025159, 1)
