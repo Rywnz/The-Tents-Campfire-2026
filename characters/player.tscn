@@ -60,8 +60,8 @@ size = Vector2(6, 15.03125)
 script = ExtResource("1_dnjla")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2047515678]
-position = Vector2(-9.5, 6.5)
-scale = Vector2(0.66071427, 0.76785713)
+position = Vector2(-10, 13)
+scale = Vector2(0.5357143, 0.53571427)
 sprite_frames = SubResource("SpriteFrames_n8jd0")
 animation = &"new_animation"
 frame = 4
