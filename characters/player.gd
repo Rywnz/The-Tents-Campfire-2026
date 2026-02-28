@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
-@export var health: int
-@export var speed: int
-@export var damage: int
+@export var health: int = 100
+@export var speed: int = 120
+@export var damage: int = 25
 
-const JUMP_VELOCITY = -250.0
+const JUMP_VELOCITY = -200.0
 
 var is_attacking = false
 var is_hurt = false
