@@ -114,3 +114,5 @@ format = 2
 
 [node name="Player" parent="." unique_id=1484898325 instance=ExtResource("2_hbghi")]
 position = Vector2(17, -12)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1764876583]
