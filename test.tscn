@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bxm0pt0gpx5et"]
+
+[ext_resource type="Script" uid="uid://bsp2s6oshc06o" path="res://progress_bar.gd" id="1_37kl0"]
+
+[node name="Test" type="Control" unique_id=824339714]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=293540220]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=1706661075]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -195.0
+offset_right = 2.0
+offset_bottom = 27.0
+grow_horizontal = 2
+value = 100.0
+script = ExtResource("1_37kl0")
