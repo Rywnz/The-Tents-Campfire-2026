@@ -110,6 +110,7 @@ tile_set = SubResource("TileSet_hn12h")
 position = Vector2(18, -12)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1467220797]
+<<<<<<< HEAD
 
 [node name="1" type="Sprite2D" parent="." unique_id=794983247]
 z_index = -1
@@ -128,3 +129,6 @@ texture = ExtResource("4_5hph3")
 position = Vector2(315, -223)
 scale = Vector2(1.1111112, 0.61419755)
 texture = ExtResource("5_j7kpp")
+=======
+zoom = Vector2(3, 3)
+>>>>>>> 207b146c6c59314bd14a504f39e84e32a0b8a700
