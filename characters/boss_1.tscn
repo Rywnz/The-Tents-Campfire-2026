@@ -277,7 +277,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"hurt",
-"speed": 7.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -345,9 +345,9 @@ speed = 50
 position = Vector2(-45.5, 45.5)
 scale = Vector2(0.2890625, 0.2890625)
 sprite_frames = SubResource("SpriteFrames_bmiag")
-animation = &"attack_heavy"
+animation = &"hurt"
 autoplay = "idle"
-frame = 13
+frame = 3
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=940230881]
