@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
-@export var health: int = 150
-@export var speed: int = 80
+@export var health: int = 300
+@export var speed: int = 60
 @export var damage: int = 15
 @export var attack_range: float = 60.0
-@export var follow_range: float = 400.0
+@export var follow_range: float = 100.0
 
 var is_attacking = false
 var can_attack = true
@@ -32,7 +32,7 @@ func _physics_process(delta):
 	if distance < follow_range and distance > attack_range and not is_attacking:
 		var dir = sign(player.global_position.x - global_position.x)
 		velocity.x = dir * speed
-		sprite.play("run")
+		sprite.play("move")
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 
@@ -68,6 +68,8 @@ func attack():
 func take_damage(amount):
 	health -= amount
 	print("BOSS HEALTH:", health)
+	sprite.play("hurt")
+	
 
 	if health <= 0:
 		die()
