@@ -54,19 +54,20 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q605b"]
-size = Vector2(6, 15.03125)
+size = Vector2(8, 20.0625)
 
 [node name="Player" type="CharacterBody2D" unique_id=1484898325]
 script = ExtResource("1_dnjla")
+health = 100
+speed = 100
+damage = 100
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2047515678]
-position = Vector2(-9.5, 6.5)
-scale = Vector2(0.66071427, 0.76785713)
 sprite_frames = SubResource("SpriteFrames_n8jd0")
 animation = &"new_animation"
 frame = 4
 frame_progress = 0.11576193
 
 [node name="player_collision" type="CollisionShape2D" parent="." unique_id=491174158]
-position = Vector2(-10, 20.515625)
+position = Vector2(-1, 18.03125)
 shape = SubResource("RectangleShape2D_q605b")
