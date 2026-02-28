@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://dtk5fowefmbi"]
 
-[ext_resource type="Texture2D" uid="uid://cpugtleh7tqt" path="res://Assets/ReverieGrassland/tileset.png" id="1_3hls8"]
+[ext_resource type="Texture2D" uid="uid://cpugtleh7tqt" path="res://Assets/ReverieGrassland/tileset.png" id="1_vn7o3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hbghi"]
-texture = ExtResource("1_3hls8")
+texture = ExtResource("1_vn7o3")
 15:0/0 = 0
 16:0/0 = 0
 17:0/0 = 0
