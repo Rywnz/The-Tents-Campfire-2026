@@ -227,7 +227,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(-131071, 524288, 1, -65535, 524288, 2, -131070, 589824, 1, -65534, 589824, 2, -131069, 655360, 1, -65533, 655360, 2, 2, 589824, 3, 42, 589824, 3, -131031, 524288, 1, -65495, 524288, 2, -131030, 589824, 1, -65494, 589824, 2, -131029, 655360, 1, -65493, 655360, 2, 5, 589824, 7, 6, 655360, 7, 7, 720896, 7)
 
 [node name="Player" parent="." unique_id=1484898325 groups=["Player"] instance=ExtResource("2_hbghi")]
-position = Vector2(999, -12)
+position = Vector2(10, -12)
 script = ExtResource("3_rka8t")
 speed = 70
 damage = 17
@@ -262,7 +262,7 @@ texture = ExtResource("7_j7kpp")
 
 [node name="3" type="Sprite2D" parent="." unique_id=2124432929]
 z_index = -1
-position = Vector2(544, 57.999996)
+position = Vector2(543, 52.999996)
 scale = Vector2(2.6961806, 2.0146606)
 texture = ExtResource("8_bjebc")
 
