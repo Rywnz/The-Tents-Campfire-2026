@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://d10b3tbtaj55d" path="res://HealthBar.tscn" id="8_5rr72"]
 [ext_resource type="Texture2D" uid="uid://fxq0cj0dnkit" path="res://Assets/background 1/3.png" id="8_bjebc"]
 [ext_resource type="Script" uid="uid://chjus6ffr4iwy" path="res://health_bar.gd" id="9_gyffv"]
-[ext_resource type="PackedScene" uid="uid://vaqqds6pv5gs" path="res://bosshealth.tscn" id="11_27bay"]
-[ext_resource type="Script" uid="uid://8dgt746eot1w" path="res://bosshealth.gd" id="12_sof0w"]
+[ext_resource type="Texture2D" uid="uid://xa0pvq2g7ink" path="res://Assets/Tent.png" id="11_1pe0h"]
+[ext_resource type="Script" uid="uid://c86fpes4ua0hs" path="res://node_2d.gd" id="12_27bay"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hbghi"]
 texture = ExtResource("1_3hls8")
@@ -260,16 +260,31 @@ texture = ExtResource("7_j7kpp")
 
 [node name="3" type="Sprite2D" parent="." unique_id=2124432929]
 z_index = -1
-position = Vector2(543, 57.999985)
+position = Vector2(544, 57.999996)
 scale = Vector2(2.6961806, 2.0146606)
 texture = ExtResource("8_bjebc")
 
 [node name="HealthBar" parent="." unique_id=1316760223 instance=ExtResource("8_5rr72")]
+position = Vector2(-40, -5)
 script = ExtResource("9_gyffv")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1903600066]
-position = Vector2(0, -3)
+position = Vector2(-7, 3)
 
-[node name="Bosshealth1" parent="." unique_id=541745053 instance=ExtResource("11_27bay")]
-position = Vector2(5, 0)
-script = ExtResource("12_sof0w")
+[node name="Tent" type="Sprite2D" parent="." unique_id=1793878706]
+position = Vector2(-11, 6)
+scale = Vector2(0.037334584, 0.033296224)
+skew = -0.029670596
+texture = ExtResource("11_1pe0h")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1823586682]
+script = ExtResource("12_27bay")
+
+[node name="Tent2" type="Sprite2D" parent="Node2D" unique_id=140850613]
+position = Vector2(1101, 9)
+scale = Vector2(0.026425658, 0.022633618)
+texture = ExtResource("11_1pe0h")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Node2D" unique_id=1126032036]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D" unique_id=1798310780]

@@ -2,6 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://b4lftfjdmysnk" path="res://Assets/level2.tres" id="1_jg0dc"]
 [ext_resource type="PackedScene" uid="uid://cqbbcp62h86lx" path="res://characters/player.tscn" id="2_nmjpi"]
+[ext_resource type="Script" uid="uid://d7jejiyn33bq" path="res://characters/player.gd" id="3_n7ypv"]
 [ext_resource type="Texture2D" uid="uid://cl4f4itno06yg" path="res://Assets/bcyaen.png" id="3_xdadj"]
 [ext_resource type="Script" uid="uid://5nym0aimtiwg" path="res://worldborderkill.gd" id="4_1y8me"]
 
@@ -31,8 +32,10 @@ layer_0/tile_data = PackedInt32Array(-1245168, 393216, 12, -1245167, 458752, 12,
 [node name="Player" parent="." unique_id=1484898325 groups=["Player"] instance=ExtResource("2_nmjpi")]
 z_index = 1
 position = Vector2(63, -28)
-speed = 70
-damage = 17
+script = ExtResource("3_n7ypv")
+speed = 120
+damage = 10
+heavy_damage = 15
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1141068168]
 zoom = Vector2(8, 8)
