@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://lve4ewpq0s0h"]
 
-[ext_resource type="Script" uid="uid://dsxqtu0dcs5tw" path="res://main_menu.gd" id="1_5b7ti"]
+[ext_resource type="Script" path="res://main_menu.gd" id="1_5b7ti"]
 [ext_resource type="Texture2D" uid="uid://bj6qgi76e1o03" path="res://Assets/inside of the tent home screen.png" id="2_dvdtt"]
 
 [node name="MainMenu" type="Node2D" unique_id=922407283]
@@ -31,7 +31,7 @@ text = "Quit"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1276241875]
 position = Vector2(958, -68)
-zoom = Vector2(1.7, 1.7)
+zoom = Vector2(3, 3)
 
 [node name="InsideOfTheTentHomeScreen" type="Sprite2D" parent="." unique_id=1693954810]
 z_index = -1
