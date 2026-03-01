@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bpy816mfwuv1j" path="res://Assets/background 1/Untitled design (4).png" id="7_j7kpp"]
 [ext_resource type="PackedScene" uid="uid://d10b3tbtaj55d" path="res://HealthBar.tscn" id="8_5rr72"]
 [ext_resource type="Texture2D" uid="uid://fxq0cj0dnkit" path="res://Assets/background 1/3.png" id="8_bjebc"]
-[ext_resource type="Script" uid="uid://chjus6ffr4iwy" path="res://health_bar.gd" id="9_gyffv"]
+[ext_resource type="Script" path="res://health_bar.gd" id="9_gyffv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hbghi"]
 texture = ExtResource("1_3hls8")
@@ -227,6 +227,7 @@ position = Vector2(18, -12)
 script = ExtResource("3_rka8t")
 speed = 70
 damage = 17
+heavy_damage = 15
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1467220797]
 position = Vector2(-1, 9)
