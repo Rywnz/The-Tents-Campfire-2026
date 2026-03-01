@@ -3,10 +3,13 @@
 [ext_resource type="Script" uid="uid://bqtp1gnsos3tp" path="res://death.gd" id="1_lf77f"]
 [ext_resource type="Texture2D" uid="uid://c4j1ssee0wx8t" path="res://Assets/death screen.png" id="1_qemge"]
 
-[node name="Death" type="Node2D" unique_id=1489135339]
+[node name="Death" type="Control" unique_id=1585855039]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_lf77f")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=2093132431]
+layout_mode = 0
 offset_right = 2000.0
 offset_bottom = 1062.0
 texture = ExtResource("1_qemge")
@@ -22,10 +25,10 @@ text = "Restart
 "
 
 [node name="mainmenu" type="Button" parent="DeathScreen" unique_id=254360777]
-offset_left = 546.0
-offset_top = 780.0
-offset_right = 696.0
-offset_bottom = 836.0
+offset_left = 511.0
+offset_top = 783.0
+offset_right = 661.0
+offset_bottom = 839.0
 text = "Main Menu"
 
 [connection signal="pressed" from="DeathScreen/restart" to="." method="_on_restart_pressed"]

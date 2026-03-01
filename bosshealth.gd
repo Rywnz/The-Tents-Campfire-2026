@@ -14,11 +14,9 @@ func _process(delta: float) -> void:
 
 func _on_boss_health_changed(current_health):
 	boss_health_bar.value = current_health
-	
+	if current_health <= 0:
+		boss_health_bar.visible = false
+		
 func on_boss_fight_start():
 	boss_health_bar.visible = true
 	
-func _on_boss_health_changed(current_health):
-	boss_health_bar.value = current_health
-	if current_health <= 0:
-		boss_health_bar.visible = false
