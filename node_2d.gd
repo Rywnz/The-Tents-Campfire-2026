@@ -1,8 +1,10 @@
-extends Node2D
+extends Area2D
 
-var unlocked = false
+func _ready():
+	self.connect("body_entered", Callable(self, "_on_body_entered"))
 
-func unlock():
-	unlocked = true
-	$StaticBody2D.CollisionShape2D.disabled = true
-	$Sprite.modulate = Color(1,1,1,0.5)  # optional fade effect
+func _on_body_entered(body):
+	print("enter")
+	if body.is_in_group("Player"):
+		print("good")
+		get_tree().change_scene_to_file("res://level_2.tscn")

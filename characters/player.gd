@@ -18,6 +18,7 @@ var is_hurt = false
 
 func _ready():
 	add_to_group("player")
+	add_to_group("Player")
 	attack_area.monitoring = false
 
 

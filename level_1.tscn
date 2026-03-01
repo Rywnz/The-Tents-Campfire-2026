@@ -212,6 +212,8 @@ sources/0 = SubResource("TileSetAtlasSource_5hph3")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5hph3"]
 distance = -168.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_27bay"]
+
 [node name="Level_1" type="Node2D" unique_id=1419932942]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1489921983]
@@ -225,7 +227,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(-131071, 524288, 1, -65535, 524288, 2, -131070, 589824, 1, -65534, 589824, 2, -131069, 655360, 1, -65533, 655360, 2, 2, 589824, 3, 42, 589824, 3, -131031, 524288, 1, -65495, 524288, 2, -131030, 589824, 1, -65494, 589824, 2, -131029, 655360, 1, -65493, 655360, 2, 5, 589824, 7, 6, 655360, 7, 7, 720896, 7)
 
 [node name="Player" parent="." unique_id=1484898325 groups=["Player"] instance=ExtResource("2_hbghi")]
-position = Vector2(18, -12)
+position = Vector2(999, -12)
 script = ExtResource("3_rka8t")
 speed = 70
 damage = 17
@@ -277,7 +279,7 @@ scale = Vector2(0.037334584, 0.033296224)
 skew = -0.029670596
 texture = ExtResource("11_1pe0h")
 
-[node name="Node2D" type="Node2D" parent="." unique_id=1823586682]
+[node name="Node2D" type="Area2D" parent="." unique_id=1935522499]
 script = ExtResource("12_27bay")
 
 [node name="Tent2" type="Sprite2D" parent="Node2D" unique_id=140850613]
@@ -285,6 +287,6 @@ position = Vector2(1101, 9)
 scale = Vector2(0.026425658, 0.022633618)
 texture = ExtResource("11_1pe0h")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Node2D" unique_id=1126032036]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D" unique_id=1798310780]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D" unique_id=1578075934]
+position = Vector2(1101, 7)
+shape = SubResource("RectangleShape2D_27bay")
