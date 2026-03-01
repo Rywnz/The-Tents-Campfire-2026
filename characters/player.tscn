@@ -1,95 +1,9 @@
 [gd_scene format=3 uid="uid://cqbbcp62h86lx"]
 
 [ext_resource type="Texture2D" uid="uid://c5dm2ea65xdu5" path="res://Assets/generic_char_v0.2/png/red/char_red_1.png" id="2_3eadt"]
+[ext_resource type="Texture2D" uid="uid://tktjxjjqpj5u" path="res://Assets/generic_char_v0.2/png/red/char_red_2.png" id="2_tory2"]
 
 [sub_resource type="GDScript" id="GDScript_3eadt"]
-script/source = "extends CharacterBody2D
-
-@export var health: int = 100
-@export var speed: int = 80
-@export var damage: int = 50
-
-const JUMP_VELOCITY = -250.0
-
-var is_attacking = false
-
-@onready var sprite = $AnimatedSprite2D
-@onready var attack_area = $AttackArea
-
-func _ready():
-	add_to_group(\"player\")
-	attack_area.monitoring = false
-
-func _physics_process(delta):
-
-	# Gravity
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-
-	# Stop movement while attacking
-	if is_attacking:
-		move_and_slide()
-		return
-
-	# Jump
-	if Input.is_action_just_pressed(\"jump\") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	# Attack
-	if Input.is_action_just_pressed(\"attack\"):
-		attack()
-
-	# Movement
-	var direction = Input.get_axis(\"left\", \"right\")
-
-	if direction:
-		velocity.x = direction * speed
-		sprite.flip_h = direction < 0
-		
-		# Move attack area to correct side
-		attack_area.position.x = 20 if direction > 0 else -20
-	else:
-		velocity.x = move_toward(velocity.x, 0, speed)
-
-	move_and_slide()
-
-	# Animations
-	if not is_on_floor():
-		sprite.play(\"jump\")
-	elif direction:
-		sprite.play(\"run\")
-	else:
-		sprite.play(\"idle\")
-
-
-func attack():
-	is_attacking = true
-	velocity = Vector2.ZERO
-	
-	sprite.play(\"attack\")
-	attack_area.monitoring = true
-	
-	await sprite.animation_finished
-	
-	attack_area.monitoring = false
-	is_attacking = false
-
-
-func _on_attack_area_body_entered(body):
-	if body.has_method(\"take_damage\"):
-		body.take_damage(damage)
-
-
-func take_damage(amount):
-	health -= amount
-	print(\"Player Health:\", health)
-
-	if health <= 0:
-		die()
-
-func die():
-	queue_free()
-"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mjkfq"]
 atlas = ExtResource("2_3eadt")
@@ -186,6 +100,38 @@ region = Rect2(112, 392, 56, 56)
 [sub_resource type="AtlasTexture" id="AtlasTexture_o853v"]
 atlas = ExtResource("2_3eadt")
 region = Rect2(168, 392, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jtsf"]
+atlas = ExtResource("2_tory2")
+region = Rect2(0, 224, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1wi5"]
+atlas = ExtResource("2_tory2")
+region = Rect2(56, 224, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdurh"]
+atlas = ExtResource("2_tory2")
+region = Rect2(112, 224, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70c3j"]
+atlas = ExtResource("2_tory2")
+region = Rect2(168, 224, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cmnif"]
+atlas = ExtResource("2_tory2")
+region = Rect2(224, 224, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yx1cl"]
+atlas = ExtResource("2_tory2")
+region = Rect2(280, 224, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vl21b"]
+atlas = ExtResource("2_tory2")
+region = Rect2(336, 224, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kn1ke"]
+atlas = ExtResource("2_tory2")
+region = Rect2(392, 224, 56, 56)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tory2"]
 atlas = ExtResource("2_3eadt")
@@ -398,6 +344,35 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_2jtsf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1wi5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdurh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_70c3j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cmnif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yx1cl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vl21b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kn1ke")
+}],
+"loop": false,
+"name": &"heavy_attack",
+"speed": 18.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_tory2")
 }, {
 "duration": 1.0,
@@ -510,16 +485,14 @@ size = Vector2(18, 17)
 
 [node name="Player" type="CharacterBody2D" unique_id=1484898325 groups=["player"]]
 script = SubResource("GDScript_3eadt")
-speed = 50
-damage = 12
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2047515678]
 position = Vector2(-10, 13)
 scale = Vector2(0.5357143, 0.53571427)
 sprite_frames = SubResource("SpriteFrames_n8jd0")
-animation = &"damage_taken"
+animation = &"heavy_attack"
 autoplay = "idle"
-frame = 3
+frame = 7
 frame_progress = 1.0
 
 [node name="player_collision" type="CollisionShape2D" parent="." unique_id=491174158]
