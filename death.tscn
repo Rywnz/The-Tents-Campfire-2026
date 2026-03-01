@@ -1,13 +1,32 @@
 [gd_scene format=3 uid="uid://bmn17abwg3f0k"]
 
+[ext_resource type="Script" uid="uid://bqtp1gnsos3tp" path="res://death.gd" id="1_lf77f"]
+[ext_resource type="Texture2D" uid="uid://c4j1ssee0wx8t" path="res://Assets/death screen.png" id="1_qemge"]
+
 [node name="Death" type="Node2D" unique_id=1489135339]
+script = ExtResource("1_lf77f")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2093132431]
+offset_right = 2000.0
+offset_bottom = 1062.0
+texture = ExtResource("1_qemge")
 
 [node name="DeathScreen" type="CanvasLayer" parent="." unique_id=1135918260]
 
 [node name="restart" type="Button" parent="DeathScreen" unique_id=1778303787]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 1230.0
+offset_top = 778.0
+offset_right = 1384.0
+offset_bottom = 832.0
+text = "Restart
+"
 
 [node name="mainmenu" type="Button" parent="DeathScreen" unique_id=254360777]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 546.0
+offset_top = 780.0
+offset_right = 696.0
+offset_bottom = 836.0
+text = "Main Menu"
+
+[connection signal="pressed" from="DeathScreen/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="DeathScreen/mainmenu" to="." method="_on_mainmenu_pressed"]

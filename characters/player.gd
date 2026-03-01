@@ -115,3 +115,4 @@ func take_damage(amount):
 		is_hurt = false
 	else:
 		queue_free()
+		get_tree().change_scene_to_file("res://death.tscn")

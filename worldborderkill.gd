@@ -5,5 +5,5 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("Player"):
-		body.respawn()
+		get_tree().change_scene_to_file("res://death.tscn")
  
