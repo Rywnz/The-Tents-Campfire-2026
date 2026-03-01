@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="insidethetent"
-run/main_scene="uid://dvl7h7j7rgt8m"
+run/main_scene="uid://lve4ewpq0s0h"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 run/size/borderless=true

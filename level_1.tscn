@@ -263,3 +263,6 @@ texture = ExtResource("8_bjebc")
 
 [node name="HealthBar" parent="." unique_id=1316760223 instance=ExtResource("8_5rr72")]
 script = ExtResource("9_gyffv")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1903600066]
+position = Vector2(0, -3)

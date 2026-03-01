@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://lve4ewpq0s0h"]
+
+[ext_resource type="Script" uid="uid://dsxqtu0dcs5tw" path="res://main_menu.gd" id="1_5b7ti"]
+[ext_resource type="Texture2D" uid="uid://bj6qgi76e1o03" path="res://Assets/inside of the tent home screen.png" id="2_dvdtt"]
+
+[node name="MainMenu" type="Node2D" unique_id=922407283]
+script = ExtResource("1_5b7ti")
+
+[node name="Button Manager" type="Control" parent="." unique_id=1171248790]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start" type="Button" parent="Button Manager" unique_id=1916097836]
+layout_mode = 0
+offset_left = 914.99994
+offset_top = 117.99999
+offset_right = 994.99994
+offset_bottom = 149.0
+rotation = -0.005995443
+text = "Start"
+
+[node name="Quit" type="Button" parent="Button Manager" unique_id=1266804123]
+layout_mode = 0
+offset_left = 915.0
+offset_top = 153.0
+offset_right = 997.0
+offset_bottom = 184.0
+text = "Quit"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1276241875]
+position = Vector2(958, -68)
+zoom = Vector2(1.7, 1.7)
+
+[node name="InsideOfTheTentHomeScreen" type="Sprite2D" parent="." unique_id=1693954810]
+z_index = -1
+position = Vector2(954, -66)
+scale = Vector2(0.65400004, 0.64699996)
+texture = ExtResource("2_dvdtt")
+
+[connection signal="pressed" from="Button Manager/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Button Manager/Quit" to="." method="_on_quit_pressed"]
