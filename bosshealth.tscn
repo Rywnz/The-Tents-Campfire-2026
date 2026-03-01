@@ -5,10 +5,16 @@
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=167261945]
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=203372597]
-offset_left = -191.0
-offset_top = 29.0
-offset_right = 89.0
-offset_bottom = 56.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -140.0
+offset_top = -27.0
+offset_right = 140.0
+grow_horizontal = 2
+grow_vertical = 0
 max_value = 300.0
 value = 300.0
 

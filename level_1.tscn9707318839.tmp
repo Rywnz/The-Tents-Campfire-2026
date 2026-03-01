@@ -271,5 +271,4 @@ script = ExtResource("9_gyffv")
 position = Vector2(0, -3)
 
 [node name="Bosshealth1" parent="." unique_id=541745053 instance=ExtResource("11_27bay")]
-position = Vector2(5, 0)
 script = ExtResource("12_sof0w")

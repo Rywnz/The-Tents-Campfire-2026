@@ -1,12 +1,13 @@
 extends Node2D
 
+@onready var boss = $"Path/To/BossNode"
 @onready var boss_health_bar = $CanvasLayer/BossHealthBar
 
 func _ready():
-	if boss_node:
-		boss_node.health_changed.connect(_on_boss_health_changed)
-		boss_health_bar.max_value = boss_node.health  # set the bar’s max to boss health
-		boss_health_bar.value = boss_node.health
+	if boss:
+		boss.health_changed.connect(_on_boss_health_changed)
+		$CanvasLayer/BossHealthBar.max_value = boss.health
+		$CanvasLayer/BossHealthBar.value = boss.health
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
