@@ -1,8 +1,59 @@
 [gd_scene format=3 uid="uid://lkehf6w0bpq4"]
 
 [ext_resource type="Script" uid="uid://dqaprad2efprb" path="res://characters/boss_1.gd" id="1_57ylu"]
+[ext_resource type="Texture2D" uid="uid://bsgq1xvye7gf0" path="res://Assets/Bosses_Frogger/Frogger/frogger_tongue.png" id="2_57ylu"]
 [ext_resource type="Texture2D" uid="uid://valb816btgyj" path="res://Assets/Bosses_Frogger/Frogger/frogger_idle.png" id="2_rv0rq"]
+[ext_resource type="Texture2D" uid="uid://c47tcqoy2pilr" path="res://Assets/Bosses_Frogger/Frogger/frogger_spit.png" id="3_cimb7"]
 [ext_resource type="Texture2D" uid="uid://blxinb5gw6xk4" path="res://Assets/Bosses_Frogger/Frogger/frogger_move.png" id="3_kvffg"]
+[ext_resource type="Texture2D" uid="uid://0id425m8tiyu" path="res://Assets/Bosses_Frogger/Frogger/frogger_hurt.png" id="4_kuh7k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sc40k"]
+atlas = ExtResource("2_57ylu")
+region = Rect2(0, 0, 384, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uh1fv"]
+atlas = ExtResource("2_57ylu")
+region = Rect2(384, 0, 384, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4run6"]
+atlas = ExtResource("2_57ylu")
+region = Rect2(768, 0, 384, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2obos"]
+atlas = ExtResource("2_57ylu")
+region = Rect2(1152, 0, 384, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d56he"]
+atlas = ExtResource("2_57ylu")
+region = Rect2(1536, 0, 384, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ayae3"]
+atlas = ExtResource("2_57ylu")
+region = Rect2(1920, 0, 384, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3lqi1"]
+atlas = ExtResource("2_57ylu")
+region = Rect2(2304, 0, 384, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwe5a"]
+atlas = ExtResource("2_57ylu")
+region = Rect2(2688, 0, 384, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6l501"]
+atlas = ExtResource("4_kuh7k")
+region = Rect2(0, 0, 384, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kupx6"]
+atlas = ExtResource("4_kuh7k")
+region = Rect2(384, 0, 384, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1udg"]
+atlas = ExtResource("4_kuh7k")
+region = Rect2(768, 0, 384, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbm5o"]
+atlas = ExtResource("4_kuh7k")
+region = Rect2(1152, 0, 384, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2xk1k"]
 atlas = ExtResource("2_rv0rq")
@@ -56,8 +107,98 @@ region = Rect2(2304, 0, 384, 128)
 atlas = ExtResource("3_kvffg")
 region = Rect2(2688, 0, 384, 128)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdtse"]
+atlas = ExtResource("3_cimb7")
+region = Rect2(0, 0, 384, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5trwc"]
+atlas = ExtResource("3_cimb7")
+region = Rect2(384, 0, 384, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gus5"]
+atlas = ExtResource("3_cimb7")
+region = Rect2(768, 0, 384, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0fvu"]
+atlas = ExtResource("3_cimb7")
+region = Rect2(1152, 0, 384, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1rrbb"]
+atlas = ExtResource("3_cimb7")
+region = Rect2(1536, 0, 384, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0n58"]
+atlas = ExtResource("3_cimb7")
+region = Rect2(1920, 0, 384, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8uhnn"]
+atlas = ExtResource("3_cimb7")
+region = Rect2(2304, 0, 384, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qco6u"]
+atlas = ExtResource("3_cimb7")
+region = Rect2(2688, 0, 384, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5v0ir"]
+atlas = ExtResource("3_cimb7")
+region = Rect2(3072, 0, 384, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2xqx"]
+atlas = ExtResource("3_cimb7")
+region = Rect2(3456, 0, 384, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55rf4"]
+atlas = ExtResource("3_cimb7")
+region = Rect2(3840, 0, 384, 128)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_bmiag"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sc40k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uh1fv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4run6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2obos")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d56he")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ayae3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3lqi1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwe5a")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6l501")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kupx6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1udg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbm5o")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 12.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2xk1k")
@@ -107,10 +248,43 @@ animations = [{
 "name": &"move",
 "speed": 16.0
 }, {
-"frames": [],
-"loop": true,
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdtse")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5trwc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gus5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a0fvu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1rrbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0n58")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8uhnn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qco6u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5v0ir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l2xqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55rf4")
+}],
+"loop": false,
 "name": &"new_animation",
-"speed": 5.0
+"speed": 16.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mvcqf"]

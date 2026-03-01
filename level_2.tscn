@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://d7jejiyn33bq" path="res://characters/player.gd" id="3_n7ypv"]
 [ext_resource type="Texture2D" uid="uid://cl4f4itno06yg" path="res://Assets/bcyaen.png" id="3_xdadj"]
 [ext_resource type="Script" uid="uid://5nym0aimtiwg" path="res://worldborderkill.gd" id="4_1y8me"]
+[ext_resource type="PackedScene" uid="uid://lkehf6w0bpq4" path="res://characters/boss_2.tscn" id="5_n7ypv"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n7ypv"]
 distance = -40.0
@@ -33,6 +34,7 @@ layer_0/tile_data = PackedInt32Array(-1245168, 393216, 12, -1245167, 458752, 12,
 z_index = 1
 position = Vector2(63, -28)
 script = ExtResource("3_n7ypv")
+health = 100
 speed = 120
 damage = 10
 heavy_damage = 15
@@ -51,3 +53,6 @@ script = ExtResource("4_1y8me")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1472359903]
 position = Vector2(6, 10)
 shape = SubResource("WorldBoundaryShape2D_n7ypv")
+
+[node name="boss1" parent="." unique_id=536172538 instance=ExtResource("5_n7ypv")]
+position = Vector2(802, -415)
