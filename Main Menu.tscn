@@ -42,7 +42,6 @@ text = "Quit"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=405849037]
 position = Vector2(865, -326)
-zoom = Vector2(1.7, 1.7)
 
 [connection signal="pressed" from="Button Manager/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Button Manager/Quit" to="." method="_on_quit_pressed"]
