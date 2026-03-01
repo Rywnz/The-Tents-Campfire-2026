@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal health_changed(current_health)
+
 @export var health: int = 200
 @export var speed: int = 60
 @export var follow_range: float = 250.0
@@ -89,11 +91,13 @@ func take_damage(amount):
 		return
 
 	health -= amount
+	emit_signal("health_changed", health)
 
 	if health > 0:
 		is_hurt = true
 		sprite.play("hurt")
 		await get_tree().create_timer(0.3).timeout
 		is_hurt = false
+
 	else:
 		queue_free()

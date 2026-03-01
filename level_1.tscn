@@ -9,7 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://bpy816mfwuv1j" path="res://Assets/background 1/Untitled design (4).png" id="7_j7kpp"]
 [ext_resource type="PackedScene" uid="uid://d10b3tbtaj55d" path="res://HealthBar.tscn" id="8_5rr72"]
 [ext_resource type="Texture2D" uid="uid://fxq0cj0dnkit" path="res://Assets/background 1/3.png" id="8_bjebc"]
-[ext_resource type="Script" path="res://health_bar.gd" id="9_gyffv"]
+[ext_resource type="Script" uid="uid://chjus6ffr4iwy" path="res://health_bar.gd" id="9_gyffv"]
+[ext_resource type="PackedScene" uid="uid://vaqqds6pv5gs" path="res://bosshealth.tscn" id="11_27bay"]
+[ext_resource type="Script" uid="uid://8dgt746eot1w" path="res://bosshealth.gd" id="12_sof0w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hbghi"]
 texture = ExtResource("1_3hls8")
@@ -267,3 +269,6 @@ script = ExtResource("9_gyffv")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1903600066]
 position = Vector2(0, -3)
+
+[node name="Bosshealth1" parent="." unique_id=541745053 instance=ExtResource("11_27bay")]
+script = ExtResource("12_sof0w")
